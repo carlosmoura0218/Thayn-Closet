@@ -429,6 +429,7 @@ height:360px
 
 </aside>
 
+
 <header class="topo">
 
 <nav class="nav">
@@ -444,7 +445,7 @@ Thayná Closet
 
 <button class="icon" onclick="openSearch()">⌕</button>
 
-<button class="icon" onclick="alert('O carrinho será ativado em uma próxima etapa.')">
+<button class="icon" onclick="falarWhatsApp()">
 🛍
 </button>
 
@@ -454,13 +455,18 @@ Thayná Closet
 
 <div class="search" id="search">
 
-<input placeholder="O que você está procurando?">
+<input
+type="search"
+placeholder="O que você está procurando?"
+>
 
 </div>
 
 </header>
 
+
 <main>
+
 
 <div class="hero">
 
@@ -468,7 +474,9 @@ Thayná Closet
 
 <div>
 
-<h1>Moda que traduz seu estilo.</h1>
+<h1>
+Moda que traduz seu estilo.
+</h1>
 
 <p>
 Peças escolhidas para você se sentir linda,
@@ -521,13 +529,21 @@ Novidades
 <div class="products">
 
 
+<!-- PRODUTO 1 -->
+
 <article class="product">
 
-<img class="pic" src="produto1.jpg" alt="Blusa Gola">
+<img
+class="pic"
+src="produto1.jpg"
+alt="Blusa Gola"
+>
 
 <div class="info">
 
-<h3>Blusa Gola</h3>
+<h3>
+Blusa Gola
+</h3>
 
 <p class="price">
 R$ 55,00
@@ -538,9 +554,11 @@ Tamanhos: P, M e G<br>
 Cores: Bege, preto e azul
 </p>
 
-<a class="buy"
-href="https://wa.me/5587974001669?text=Ol%C3%A1!%20Tenho%20interesse%20na%20Blusa%20Gola%2C%20no%20valor%20de%20R%24%2055%2C00.%20Gostaria%20de%20saber%20sobre%20a%20disponibilidade.%20%F0%9F%9B%8D%EF%B8%8F"
-target="_blank">
+<a
+class="buy"
+href="https://wa.me/5587974001669"
+target="_blank"
+>
 Comprar pelo WhatsApp
 </a>
 
@@ -549,13 +567,21 @@ Comprar pelo WhatsApp
 </article>
 
 
+<!-- PRODUTO 2 -->
+
 <article class="product">
 
-<img class="pic" src="produto2.jpg" alt="Body">
+<img
+class="pic"
+src="produto2.jpg"
+alt="Body"
+>
 
 <div class="info">
 
-<h3>Body</h3>
+<h3>
+Body
+</h3>
 
 <p class="price">
 R$ 35,00
@@ -566,9 +592,11 @@ Tamanhos: P, M e G<br>
 Cores: Preto, branco e rosa
 </p>
 
-<a class="buy"
-href="https://wa.me/5587974001669?text=Ol%C3%A1!%20Tenho%20interesse%20no%20Body%2C%20no%20valor%20de%20R%24%2035%2C00.%20Gostaria%20de%20saber%20sobre%20a%20disponibilidade.%20%F0%9F%9B%8D%EF%B8%8F"
-target="_blank">
+<a
+class="buy"
+href="https://wa.me/5587974001669"
+target="_blank"
+>
 Comprar pelo WhatsApp
 </a>
 
@@ -577,13 +605,21 @@ Comprar pelo WhatsApp
 </article>
 
 
+<!-- PRODUTO 3 -->
+
 <article class="product">
 
-<img class="pic" src="produto3.jpg" alt="Regata">
+<img
+class="pic"
+src="produto3.jpg"
+alt="Regata"
+>
 
 <div class="info">
 
-<h3>Regata</h3>
+<h3>
+Regata
+</h3>
 
 <p class="price">
 R$ 35,00
@@ -594,9 +630,11 @@ Tamanhos: P, M e G<br>
 Cores: Preto, rosa e marrom
 </p>
 
-<a class="buy"
-href="https://wa.me/5587974001669?text=Ol%C3%A1!%20Tenho%20interesse%20na%20Regata%2C%20no%20valor%20de%20R%24%2035%2C00.%20Gostaria%20de%20saber%20sobre%20a%20disponibilidade.%20%F0%9F%9B%8D%EF%B8%8F"
-target="_blank">
+<a
+class="buy"
+href="https://wa.me/5587974001669"
+target="_blank"
+>
 Comprar pelo WhatsApp
 </a>
 
@@ -666,7 +704,10 @@ Seu estilo.
 
 <div>
 
-<h2 class="title" style="text-align:left">
+<h2
+class="title"
+style="text-align:left"
+>
 Sobre a Thayná Closet
 </h2>
 
@@ -701,12 +742,14 @@ Siga a Thayná Closet e acompanhe as novidades.
 
 <a
 class="btn"
-href="https://wa.me/5587974001669?text=Ol%C3%A1!%20Vim%20pelo%20site%20da%20Thayn%C3%A1%20Closet%20e%20gostaria%20de%20mais%20informa%C3%A7%C3%B5es.%20%F0%9F%92%95"
-target="_blank">
+href="https://wa.me/5587974001669"
+target="_blank"
+>
 Falar pelo WhatsApp
 </a>
 
 </section>
+
 
 </main>
 
@@ -735,7 +778,8 @@ Atendimento
 
 <a
 href="https://wa.me/5587974001669"
-target="_blank">
+target="_blank"
+>
 WhatsApp
 </a>
 
@@ -768,27 +812,64 @@ Privacidade
 
 <script>
 
-function openMenu(){
+const WHATSAPP = "5587974001669";
 
-document.getElementById('side').classList.add('open');
 
-document.getElementById('overlay').classList.add('open');
+function falarWhatsApp(){
+
+const mensagem =
+"Olá! Vim pelo site da Thayná Closet e gostaria de mais informações. 💕";
+
+const url =
+"https://wa.me/" +
+WHATSAPP +
+"?text=" +
+encodeURIComponent(mensagem);
+
+window.open(url, "_blank");
 
 }
+
+
+function openMenu(){
+
+document
+.getElementById("side")
+.classList
+.add("open");
+
+document
+.getElementById("overlay")
+.classList
+.add("open");
+
+}
+
 
 function closeMenu(){
 
-document.getElementById('side').classList.remove('open');
+document
+.getElementById("side")
+.classList
+.remove("open");
 
-document.getElementById('overlay').classList.remove('open');
+document
+.getElementById("overlay")
+.classList
+.remove("open");
 
 }
 
+
 function openSearch(){
 
-const s=document.getElementById('search');
+const search =
+document.getElementById("search");
 
-s.style.display=s.style.display==='block'?'none':'block';
+search.style.display =
+search.style.display === "block"
+? "none"
+: "block";
 
 }
 
