@@ -5,71 +5,794 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="description" content="Thayná Closet — moda que traduz seu estilo.">
 <title>Thayná Closet</title>
+
 <style>
-:root{--bege:#f7f0e8;--bege2:#efe2d5;--rose:#b88978;--marrom:#5a4035;--texto:#3f3029;--branco:#fffdfb}
-*{box-sizing:border-box;margin:0;padding:0}body{font-family:Arial,Helvetica,sans-serif;background:var(--branco);color:var(--texto);line-height:1.5}a{text-decoration:none;color:inherit}
-.topo{position:sticky;top:0;z-index:20;background:#fffdfbf5;backdrop-filter:blur(8px);border-bottom:1px solid #eadbd0}
-.nav{max-width:1180px;margin:auto;height:76px;display:flex;align-items:center;justify-content:space-between;padding:0 20px}.logo{font:27px Georgia,serif;color:var(--marrom);text-align:center}.logo small{display:block;font:8px Arial,sans-serif;letter-spacing:3px;color:var(--rose)}
-button{font:inherit;border:0;cursor:pointer}.icon{width:42px;height:42px;border-radius:50%;background:var(--bege);color:var(--marrom);font-size:19px}.actions{display:flex;gap:9px}
-.hero{background:linear-gradient(120deg,var(--bege),#fffaf6)}.hero-in{max-width:1180px;margin:auto;padding:75px 20px;display:grid;grid-template-columns:1fr 1fr;gap:45px;align-items:center}.hero h1{font:normal clamp(44px,6vw,72px) Georgia,serif;color:var(--marrom);line-height:1.05}.hero p{margin:20px 0;font-size:18px;color:#765f54;max-width:500px}.btn{display:inline-block;background:var(--marrom);color:white;padding:14px 25px;border-radius:28px}
-.hero-card{min-height:350px;border-radius:25px;background:linear-gradient(145deg,#e8d4c6,#c89f8c);display:flex;align-items:center;justify-content:center;color:white;font:34px Georgia,serif;text-align:center}
-section{max-width:1180px;margin:auto;padding:65px 20px}.title{text-align:center;font:normal 34px Georgia,serif;color:var(--marrom);margin-bottom:32px}
-.cats,.products{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}.cat{padding:25px 10px;text-align:center;background:var(--bege);border-radius:15px;color:var(--marrom)}
-.product{background:#fff;border:1px solid #eadfd8;border-radius:17px;overflow:hidden;box-shadow:0 8px 25px #5a40350d}.pic{width:100%;height:300px;object-fit:cover;display:block}.info{padding:17px}.info h3{font-size:18px;color:var(--marrom);margin-bottom:6px}.price{font-weight:bold;color:var(--rose);font-size:17px}.details{font-size:13px;color:#77655c;margin-top:8px}.buy{display:block;text-align:center;background:var(--marrom);color:#fff;padding:11px;border-radius:22px;margin-top:14px}
-.banner{max-width:1180px;margin:0 auto 65px;padding:0 20px}.banner-in{background:var(--marrom);color:white;border-radius:22px;text-align:center;padding:45px}.banner h2{font:normal 35px Georgia,serif}.banner p{margin:10px 0 22px}
-.benefits{background:var(--bege)}.benefit-in{max-width:1180px;margin:auto;padding:50px 20px;display:grid;grid-template-columns:repeat(3,1fr);gap:25px;text-align:center}.benefit-in h3{color:var(--marrom);margin:7px 0}
-.about{display:grid;grid-template-columns:1fr 1fr;gap:50px;align-items:center}.about-box{height:300px;border-radius:22px;background:linear-gradient(145deg,#dbc1b2,#f0ded3);display:flex;align-items:center;justify-content:center;color:white;font:32px Georgia,serif}.about p{color:#6f5b52}
-.social{background:var(--bege);text-align:center}
-footer{background:#3d2c25;color:#f5ebe4;padding:45px 20px}.foot{max-width:1180px;margin:auto;display:grid;grid-template-columns:2fr 1fr 1fr;gap:35px}.foot h2{font:26px Georgia,serif;font-weight:400}.foot h3{margin-bottom:8px}.foot a{display:block;color:#d9c8bd;margin:5px 0}
-.side{position:fixed;top:0;left:-310px;width:290px;height:100vh;background:#fffdfb;z-index:50;padding:25px;box-shadow:8px 0 30px #0002;transition:.25s}.side.open{left:0}.side h2{font:26px Georgia,serif;color:var(--marrom);margin:35px 0 18px}.side a{display:block;padding:12px 0;border-bottom:1px solid #eee1d8}.close{float:right;background:none;font-size:25px}.overlay{display:none;position:fixed;inset:0;background:#0006;z-index:40}.overlay.open{display:block}.search{display:none;padding:12px;background:white;border-bottom:1px solid #eadbd0;text-align:center}.search input{width:min(700px,90%);padding:13px;border:1px solid #decfc4;border-radius:25px}
-@media(max-width:800px){.hero-in,.about{grid-template-columns:1fr}.cats,.products{grid-template-columns:repeat(2,1fr)}.pic{height:250px}.benefit-in,.foot{grid-template-columns:1fr}.hero-card{min-height:260px}}
-@media(max-width:500px){.products{grid-template-columns:1fr}.pic{height:360px}}
+:root{
+--bege:#f7f0e8;
+--bege2:#efe2d5;
+--rose:#b88978;
+--marrom:#5a4035;
+--texto:#3f3029;
+--branco:#fffdfb
+}
+
+*{
+box-sizing:border-box;
+margin:0;
+padding:0
+}
+
+body{
+font-family:Arial,Helvetica,sans-serif;
+background:var(--branco);
+color:var(--texto);
+line-height:1.5
+}
+
+a{
+text-decoration:none;
+color:inherit
+}
+
+button{
+font:inherit;
+border:0;
+cursor:pointer
+}
+
+.topo{
+position:sticky;
+top:0;
+z-index:20;
+background:#fffdfbf5;
+backdrop-filter:blur(8px);
+border-bottom:1px solid #eadbd0
+}
+
+.nav{
+max-width:1180px;
+margin:auto;
+height:76px;
+display:flex;
+align-items:center;
+justify-content:space-between;
+padding:0 20px
+}
+
+.logo{
+font:27px Georgia,serif;
+color:var(--marrom);
+text-align:center
+}
+
+.logo small{
+display:block;
+font:8px Arial,sans-serif;
+letter-spacing:3px;
+color:var(--rose)
+}
+
+.icon{
+width:42px;
+height:42px;
+border-radius:50%;
+background:var(--bege);
+color:var(--marrom);
+font-size:19px
+}
+
+.actions{
+display:flex;
+gap:9px
+}
+
+.hero{
+background:linear-gradient(120deg,var(--bege),#fffaf6)
+}
+
+.hero-in{
+max-width:1180px;
+margin:auto;
+padding:75px 20px;
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:45px;
+align-items:center
+}
+
+.hero h1{
+font:normal clamp(44px,6vw,72px) Georgia,serif;
+color:var(--marrom);
+line-height:1.05
+}
+
+.hero p{
+margin:20px 0;
+font-size:18px;
+color:#765f54;
+max-width:500px
+}
+
+.btn{
+display:inline-block;
+background:var(--marrom);
+color:white;
+padding:14px 25px;
+border-radius:28px
+}
+
+.hero-card{
+min-height:350px;
+border-radius:25px;
+background:linear-gradient(145deg,#e8d4c6,#c89f8c);
+display:flex;
+align-items:center;
+justify-content:center;
+color:white;
+font:34px Georgia,serif;
+text-align:center
+}
+
+section{
+max-width:1180px;
+margin:auto;
+padding:65px 20px
+}
+
+.title{
+text-align:center;
+font:normal 34px Georgia,serif;
+color:var(--marrom);
+margin-bottom:32px
+}
+
+.cats,
+.products{
+display:grid;
+grid-template-columns:repeat(4,1fr);
+gap:18px
+}
+
+.cat{
+padding:25px 10px;
+text-align:center;
+background:var(--bege);
+border-radius:15px;
+color:var(--marrom)
+}
+
+.product{
+background:#fff;
+border:1px solid #eadfd8;
+border-radius:17px;
+overflow:hidden;
+box-shadow:0 8px 25px #5a40350d
+}
+
+.pic{
+width:100%;
+height:300px;
+object-fit:cover;
+display:block
+}
+
+.info{
+padding:17px
+}
+
+.info h3{
+font-size:18px;
+color:var(--marrom);
+margin-bottom:6px
+}
+
+.price{
+font-weight:bold;
+color:var(--rose);
+font-size:17px
+}
+
+.details{
+font-size:13px;
+color:#77655c;
+margin-top:8px
+}
+
+.buy{
+display:block;
+text-align:center;
+background:var(--marrom);
+color:#fff;
+padding:11px;
+border-radius:22px;
+margin-top:14px
+}
+
+.banner{
+max-width:1180px;
+margin:0 auto 65px;
+padding:0 20px
+}
+
+.banner-in{
+background:var(--marrom);
+color:white;
+border-radius:22px;
+text-align:center;
+padding:45px
+}
+
+.banner h2{
+font:normal 35px Georgia,serif
+}
+
+.banner p{
+margin:10px 0 22px
+}
+
+.benefits{
+background:var(--bege)
+}
+
+.benefit-in{
+max-width:1180px;
+margin:auto;
+padding:50px 20px;
+display:grid;
+grid-template-columns:repeat(3,1fr);
+gap:25px;
+text-align:center
+}
+
+.benefit-in h3{
+color:var(--marrom);
+margin:7px 0
+}
+
+.about{
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:50px;
+align-items:center
+}
+
+.about-box{
+height:300px;
+border-radius:22px;
+background:linear-gradient(145deg,#dbc1b2,#f0ded3);
+display:flex;
+align-items:center;
+justify-content:center;
+color:white;
+font:32px Georgia,serif
+}
+
+.about p{
+color:#6f5b52
+}
+
+.social{
+background:var(--bege);
+text-align:center
+}
+
+footer{
+background:#3d2c25;
+color:#f5ebe4;
+padding:45px 20px
+}
+
+.foot{
+max-width:1180px;
+margin:auto;
+display:grid;
+grid-template-columns:2fr 1fr 1fr;
+gap:35px
+}
+
+.foot h2{
+font:26px Georgia,serif;
+font-weight:400
+}
+
+.foot h3{
+margin-bottom:8px
+}
+
+.foot a{
+display:block;
+color:#d9c8bd;
+margin:5px 0
+}
+
+.side{
+position:fixed;
+top:0;
+left:-310px;
+width:290px;
+height:100vh;
+background:#fffdfb;
+z-index:50;
+padding:25px;
+box-shadow:8px 0 30px #0002;
+transition:.25s
+}
+
+.side.open{
+left:0
+}
+
+.side h2{
+font:26px Georgia,serif;
+color:var(--marrom);
+margin:35px 0 18px
+}
+
+.side a{
+display:block;
+padding:12px 0;
+border-bottom:1px solid #eee1d8
+}
+
+.close{
+float:right;
+background:none;
+font-size:25px
+}
+
+.overlay{
+display:none;
+position:fixed;
+inset:0;
+background:#0006;
+z-index:40
+}
+
+.overlay.open{
+display:block
+}
+
+.search{
+display:none;
+padding:12px;
+background:white;
+border-bottom:1px solid #eadbd0;
+text-align:center
+}
+
+.search input{
+width:min(700px,90%);
+padding:13px;
+border:1px solid #decfc4;
+border-radius:25px
+}
+
+@media(max-width:800px){
+
+.hero-in,
+.about{
+grid-template-columns:1fr
+}
+
+.cats,
+.products{
+grid-template-columns:repeat(2,1fr)
+}
+
+.pic{
+height:250px
+}
+
+.benefit-in,
+.foot{
+grid-template-columns:1fr
+}
+
+.hero-card{
+min-height:260px
+}
+
+}
+
+@media(max-width:500px){
+
+.products{
+grid-template-columns:1fr
+}
+
+.pic{
+height:360px
+}
+
+}
 </style>
 </head>
-<body>
-<div class="overlay" id="overlay" onclick="closeMenu()"></div>
-<aside class="side" id="side"><button class="close" onclick="closeMenu()">×</button><h2>Thayná Closet</h2>
-<a href="#novidades">Novidades</a><a href="#categorias">Vestidos</a><a href="#categorias">Conjuntos</a><a href="#novidades">Blusas</a><a href="#novidades">Regatas</a><a href="#novidades">Bodies</a><a href="#categorias">Acessórios</a><a href="#promocao">Promoções</a></aside>
 
-<header class="topo"><nav class="nav">
+<body>
+
+<div class="overlay" id="overlay" onclick="closeMenu()"></div>
+
+<aside class="side" id="side">
+
+<button class="close" onclick="closeMenu()">×</button>
+
+<h2>Thayná Closet</h2>
+
+<a href="#novidades">Novidades</a>
+<a href="#categorias">Vestidos</a>
+<a href="#categorias">Conjuntos</a>
+<a href="#novidades">Blusas</a>
+<a href="#novidades">Regatas</a>
+<a href="#novidades">Bodies</a>
+<a href="#categorias">Acessórios</a>
+<a href="#promocao">Promoções</a>
+
+</aside>
+
+<header class="topo">
+
+<nav class="nav">
+
 <button class="icon" onclick="openMenu()">☰</button>
-<a class="logo" href="#">Thayná Closet<small>ESTILO EM CADA DETALHE</small></a>
-<div class="actions"><button class="icon" onclick="openSearch()">⌕</button><button class="icon" onclick="alert('O carrinho será ativado na próxima etapa.')">🛍</button></div>
-</nav><div class="search" id="search"><input placeholder="O que você está procurando?"></div></header>
+
+<a class="logo" href="#">
+Thayná Closet
+<small>ESTILO EM CADA DETALHE</small>
+</a>
+
+<div class="actions">
+
+<button class="icon" onclick="openSearch()">⌕</button>
+
+<button class="icon" onclick="alert('O carrinho será ativado em uma próxima etapa.')">
+🛍
+</button>
+
+</div>
+
+</nav>
+
+<div class="search" id="search">
+
+<input placeholder="O que você está procurando?">
+
+</div>
+
+</header>
 
 <main>
-<div class="hero"><div class="hero-in"><div><h1>Moda que traduz seu estilo.</h1><p>Peças escolhidas para você se sentir linda, confiante e autêntica em cada detalhe.</p><a class="btn" href="#novidades">Comprar agora</a></div><div class="hero-card">THAYNÁ<br>CLOSET</div></div></div>
 
-<section id="categorias"><h2 class="title">Compre por categoria</h2><div class="cats">
-<a class="cat" href="#novidades">Vestidos</a><a class="cat" href="#novidades">Conjuntos</a><a class="cat" href="#novidades">Blusas</a><a class="cat" href="#novidades">Calças</a><a class="cat" href="#novidades">Saias</a><a class="cat" href="#novidades">Bodies</a><a class="cat" href="#novidades">Regatas</a><a class="cat" href="#promocao">Promoções</a>
-</div></section>
+<div class="hero">
 
-<section id="novidades"><h2 class="title">Novidades</h2><div class="products">
-<article class="product"><img class="pic" src="produto1.jpg" alt="Blusa Gola"><div class="info"><h3>Blusa Gola</h3><p class="price">R$ 55,00</p><p class="details">Tamanhos: P, M e G<br>Cores: Bege, preto e azul</p><a class="buy" href="#" onclick="comprar('Blusa Gola','R$ 55,00')">Comprar</a></div></article>
-<article class="product"><img class="pic" src="produto2.jpg" alt="Body"><div class="info"><h3>Body</h3><p class="price">R$ 35,00</p><p class="details">Tamanhos: P, M e G<br>Cores: Preto, branco e rosa</p><a class="buy" href="#" onclick="comprar('Body','R$ 35,00')">Comprar</a></div></article>
-<article class="product"><img class="pic" src="produto3.jpg" alt="Regata"><div class="info"><h3>Regata</h3><p class="price">R$ 35,00</p><p class="details">Tamanhos: P, M e G<br>Cores: Preto, rosa e marrom</p><a class="buy" href="#" onclick="comprar('Regata','R$ 35,00')">Comprar</a></div></article>
-</div></section>
+<div class="hero-in">
 
-<div class="banner" id="promocao"><div class="banner-in"><h2>Seu estilo, sua essência.</h2><p>Confira nossas novidades e condições especiais.</p><a class="btn" href="#novidades">Ver peças</a></div></div>
+<div>
 
-<div class="benefits"><div class="benefit-in"><div>📦<h3>Envio</h3><p>Enviamos seus pedidos com carinho.</p></div><div>💳<h3>Pagamento</h3><p>Opções de pagamento para facilitar sua compra.</p></div><div>💬<h3>Atendimento</h3><p>Fale conosco para tirar suas dúvidas.</p></div></div></div>
+<h1>Moda que traduz seu estilo.</h1>
 
-<section class="about"><div class="about-box">Seu estilo.</div><div><h2 class="title" style="text-align:left">Sobre a Thayná Closet</h2><p>A Thayná Closet nasceu para valorizar a beleza e a personalidade de cada mulher.</p><br><p>Uma curadoria de moda pensada para trazer estilo, conforto e confiança para todos os momentos.</p></div></section>
+<p>
+Peças escolhidas para você se sentir linda,
+confiante e autêntica em cada detalhe.
+</p>
 
-<section class="social"><h2 class="title">Instagram & WhatsApp</h2><p>Siga a Thayná Closet e acompanhe as novidades.</p><br><a class="btn" href="#" onclick="alert('Na próxima etapa vamos colocar seus links reais de Instagram e WhatsApp.')">Entrar em contato</a></section>
+<a class="btn" href="#novidades">
+Comprar agora
+</a>
+
+</div>
+
+<div class="hero-card">
+THAYNÁ<br>CLOSET
+</div>
+
+</div>
+
+</div>
+
+
+<section id="categorias">
+
+<h2 class="title">
+Compre por categoria
+</h2>
+
+<div class="cats">
+
+<a class="cat" href="#novidades">Vestidos</a>
+<a class="cat" href="#novidades">Conjuntos</a>
+<a class="cat" href="#novidades">Blusas</a>
+<a class="cat" href="#novidades">Calças</a>
+<a class="cat" href="#novidades">Saias</a>
+<a class="cat" href="#novidades">Bodies</a>
+<a class="cat" href="#novidades">Regatas</a>
+<a class="cat" href="#promocao">Promoções</a>
+
+</div>
+
+</section>
+
+
+<section id="novidades">
+
+<h2 class="title">
+Novidades
+</h2>
+
+<div class="products">
+
+
+<article class="product">
+
+<img class="pic" src="produto1.jpg" alt="Blusa Gola">
+
+<div class="info">
+
+<h3>Blusa Gola</h3>
+
+<p class="price">
+R$ 55,00
+</p>
+
+<p class="details">
+Tamanhos: P, M e G<br>
+Cores: Bege, preto e azul
+</p>
+
+<a class="buy"
+href="https://wa.me/5587974001669?text=Ol%C3%A1!%20Tenho%20interesse%20na%20Blusa%20Gola%2C%20no%20valor%20de%20R%24%2055%2C00.%20Gostaria%20de%20saber%20sobre%20a%20disponibilidade.%20%F0%9F%9B%8D%EF%B8%8F"
+target="_blank">
+Comprar pelo WhatsApp
+</a>
+
+</div>
+
+</article>
+
+
+<article class="product">
+
+<img class="pic" src="produto2.jpg" alt="Body">
+
+<div class="info">
+
+<h3>Body</h3>
+
+<p class="price">
+R$ 35,00
+</p>
+
+<p class="details">
+Tamanhos: P, M e G<br>
+Cores: Preto, branco e rosa
+</p>
+
+<a class="buy"
+href="https://wa.me/5587974001669?text=Ol%C3%A1!%20Tenho%20interesse%20no%20Body%2C%20no%20valor%20de%20R%24%2035%2C00.%20Gostaria%20de%20saber%20sobre%20a%20disponibilidade.%20%F0%9F%9B%8D%EF%B8%8F"
+target="_blank">
+Comprar pelo WhatsApp
+</a>
+
+</div>
+
+</article>
+
+
+<article class="product">
+
+<img class="pic" src="produto3.jpg" alt="Regata">
+
+<div class="info">
+
+<h3>Regata</h3>
+
+<p class="price">
+R$ 35,00
+</p>
+
+<p class="details">
+Tamanhos: P, M e G<br>
+Cores: Preto, rosa e marrom
+</p>
+
+<a class="buy"
+href="https://wa.me/5587974001669?text=Ol%C3%A1!%20Tenho%20interesse%20na%20Regata%2C%20no%20valor%20de%20R%24%2035%2C00.%20Gostaria%20de%20saber%20sobre%20a%20disponibilidade.%20%F0%9F%9B%8D%EF%B8%8F"
+target="_blank">
+Comprar pelo WhatsApp
+</a>
+
+</div>
+
+</article>
+
+
+</div>
+
+</section>
+
+
+<div class="banner" id="promocao">
+
+<div class="banner-in">
+
+<h2>
+Seu estilo, sua essência.
+</h2>
+
+<p>
+Confira nossas novidades e condições especiais.
+</p>
+
+<a class="btn" href="#novidades">
+Ver peças
+</a>
+
+</div>
+
+</div>
+
+
+<div class="benefits">
+
+<div class="benefit-in">
+
+<div>
+📦
+<h3>Envio</h3>
+<p>Enviamos seus pedidos com carinho.</p>
+</div>
+
+<div>
+💳
+<h3>Pagamento</h3>
+<p>Opções de pagamento para facilitar sua compra.</p>
+</div>
+
+<div>
+💬
+<h3>Atendimento</h3>
+<p>Fale conosco para tirar suas dúvidas.</p>
+</div>
+
+</div>
+
+</div>
+
+
+<section class="about">
+
+<div class="about-box">
+Seu estilo.
+</div>
+
+<div>
+
+<h2 class="title" style="text-align:left">
+Sobre a Thayná Closet
+</h2>
+
+<p>
+A Thayná Closet nasceu para valorizar a beleza
+e a personalidade de cada mulher.
+</p>
+
+<br>
+
+<p>
+Uma curadoria de moda pensada para trazer estilo,
+conforto e confiança para todos os momentos.
+</p>
+
+</div>
+
+</section>
+
+
+<section class="social">
+
+<h2 class="title">
+Instagram & WhatsApp
+</h2>
+
+<p>
+Siga a Thayná Closet e acompanhe as novidades.
+</p>
+
+<br>
+
+<a
+class="btn"
+href="https://wa.me/5587974001669?text=Ol%C3%A1!%20Vim%20pelo%20site%20da%20Thayn%C3%A1%20Closet%20e%20gostaria%20de%20mais%20informa%C3%A7%C3%B5es.%20%F0%9F%92%95"
+target="_blank">
+Falar pelo WhatsApp
+</a>
+
+</section>
+
 </main>
 
-<footer><div class="foot"><div><h2>Thayná Closet</h2><p>Estilo em cada detalhe.</p></div><div><h3>Atendimento</h3><a href="#">Instagram</a><a href="#">WhatsApp</a></div><div><h3>Ajuda</h3><a href="#">Trocas e devoluções</a><a href="#">Privacidade</a></div></div></footer>
+
+<footer>
+
+<div class="foot">
+
+<div>
+
+<h2>
+Thayná Closet
+</h2>
+
+<p>
+Estilo em cada detalhe.
+</p>
+
+</div>
+
+<div>
+
+<h3>
+Atendimento
+</h3>
+
+<a
+href="https://wa.me/5587974001669"
+target="_blank">
+WhatsApp
+</a>
+
+<a href="#">
+Instagram
+</a>
+
+</div>
+
+<div>
+
+<h3>
+Ajuda
+</h3>
+
+<a href="#">
+Trocas e devoluções
+</a>
+
+<a href="#">
+Privacidade
+</a>
+
+</div>
+
+</div>
+
+</footer>
+
 
 <script>
-function openMenu(){document.getElementById('side').classList.add('open');document.getElementById('overlay').classList.add('open')}
-function closeMenu(){document.getElementById('side').classList.remove('open');document.getElementById('overlay').classList.remove('open')}
-function openSearch(){const s=document.getElementById('search');s.style.display=s.style.display==='block'?'none':'block'}
-function comprar(produto,preco){
-const numero='5587974001669';
-const mensagem='Olá! Tenho interesse na '+produto+', no valor de '+preco+'. Gostaria de saber sobre a disponibilidade. 🛍️';
-window.open('https://wa.me/'+numero+'?text='+encodeURIComponent(mensagem),'_blank');
+
+function openMenu(){
+
+document.getElementById('side').classList.add('open');
+
+document.getElementById('overlay').classList.add('open');
+
 }
+
+function closeMenu(){
+
+document.getElementById('side').classList.remove('open');
+
+document.getElementById('overlay').classList.remove('open');
+
+}
+
+function openSearch(){
+
+const s=document.getElementById('search');
+
+s.style.display=s.style.display==='block'?'none':'block';
+
+}
+
 </script>
+
 </body>
 </html>
