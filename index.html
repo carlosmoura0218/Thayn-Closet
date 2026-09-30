@@ -65,7 +65,11 @@ footer{background:#3d2c25;color:#f5ebe4;padding:45px 20px}.foot{max-width:1180px
 function openMenu(){document.getElementById('side').classList.add('open');document.getElementById('overlay').classList.add('open')}
 function closeMenu(){document.getElementById('side').classList.remove('open');document.getElementById('overlay').classList.remove('open')}
 function openSearch(){const s=document.getElementById('search');s.style.display=s.style.display==='block'?'none':'block'}
-function comprar(produto,preco){alert('Compra selecionada: '+produto+' — '+preco+'\n\nNa próxima etapa vamos ligar este botão ao WhatsApp da Thayná Closet.')}
+function comprar(produto,preco){
+const numero='5587974001669';
+const mensagem='Olá! Tenho interesse na '+produto+', no valor de '+preco+'. Gostaria de saber sobre a disponibilidade. 🛍️';
+window.open('https://wa.me/'+numero+'?text='+encodeURIComponent(mensagem),'_blank');
+}
 </script>
 </body>
 </html>
