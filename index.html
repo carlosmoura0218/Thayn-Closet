@@ -1,209 +1,765 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-
 <head>
-
 <meta charset="UTF-8">
-
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
 <meta name="description" content="Thayná Closet — moda que traduz seu estilo.">
-
 <title>Thayná Closet</title>
 
-
 <style>
-
 :root{
---bege:#f7f0e8;
---bege2:#efe2d5;
---rose:#b88978;
---marrom:#5a4035;
---texto:#3f3029;
---branco:#fffdfb;
---claro:#faf6f2;
+  --bege:#f7f0e8;
+  --bege2:#efe2d5;
+  --rose:#b88978;
+  --marrom:#5a4035;
+  --texto:#3f3029;
+  --branco:#fffdfb;
 }
 
 *{
-box-sizing:border-box;
-margin:0;
-padding:0;
-}
-
-html{
-scroll-behavior:smooth;
+  box-sizing:border-box;
+  margin:0;
+  padding:0;
 }
 
 body{
-font-family:Arial,Helvetica,sans-serif;
-background:var(--branco);
-color:var(--texto);
-line-height:1.5;
+  font-family:Arial,Helvetica,sans-serif;
+  background:var(--bege);
+  color:var(--texto);
+  line-height:1.5;
 }
-
-a{
-text-decoration:none;
-color:inherit;
-}
-
-button{
-font:inherit;
-border:0;
-cursor:pointer;
-}
-
-
-/* =========================
-   TOPO
-========================= */
 
 .topo{
-position:sticky;
-top:0;
-z-index:100;
-background:#fffdfbf5;
-backdrop-filter:blur(10px);
-border-bottom:1px solid #eadbd0;
+  position:sticky;
+  top:0;
+  z-index:100;
+  background:rgba(255,253,251,.98);
+  border-bottom:1px solid #eadbd0;
 }
 
 .nav{
-max-width:1180px;
-margin:auto;
-height:76px;
-display:flex;
-align-items:center;
-justify-content:space-between;
-padding:0 20px;
+  max-width:1180px;
+  margin:auto;
+  min-height:70px;
+  padding:12px 20px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
 }
 
 .logo{
-font:27px Georgia,serif;
-color:var(--marrom);
-text-align:center;
+  font-family:Georgia,serif;
+  font-size:25px;
+  font-weight:bold;
+  color:var(--marrom);
 }
 
-.logo small{
-display:block;
-font:8px Arial,sans-serif;
-letter-spacing:3px;
-color:var(--rose);
-margin-top:2px;
+.logo span{
+  color:var(--rose);
 }
 
-.icon{
-width:42px;
-height:42px;
-border-radius:50%;
-background:var(--bege);
-color:var(--marrom);
-font-size:19px;
+.menu-btn{
+  border:0;
+  background:var(--bege2);
+  color:var(--marrom);
+  border-radius:10px;
+  padding:10px 14px;
+  cursor:pointer;
+  font-size:18px;
 }
-
-.actions{
-display:flex;
-gap:9px;
-}
-
-
-/* =========================
-   BUSCA
-========================= */
-
-.search{
-display:none;
-padding:12px;
-background:white;
-border-bottom:1px solid #eadbd0;
-text-align:center;
-}
-
-.search input{
-width:min(700px,90%);
-padding:13px 18px;
-border:1px solid #decfc4;
-border-radius:25px;
-outline:none;
-font-size:15px;
-}
-
-
-/* =========================
-   MENU LATERAL
-========================= */
-
-.side{
-position:fixed;
-top:0;
-left:-310px;
-width:290px;
-height:100vh;
-background:#fffdfb;
-z-index:200;
-padding:25px;
-box-shadow:8px 0 30px #0002;
-transition:.25s;
-overflow-y:auto;
-}
-
-.side.open{
-left:0;
-}
-
-.side h2{
-font:26px Georgia,serif;
-color:var(--marrom);
-margin:35px 0 18px;
-}
-
-.side a{
-display:block;
-padding:13px 0;
-border-bottom:1px solid #eee1d8;
-}
-
-.close{
-float:right;
-background:none;
-font-size:28px;
-color:var(--marrom);
-}
-
-.overlay{
-display:none;
-position:fixed;
-inset:0;
-background:#0006;
-z-index:150;
-}
-
-.overlay.open{
-display:block;
-}
-
-
-/* =========================
-   HERO
-========================= */
 
 .hero{
-background:linear-gradient(120deg,var(--bege),#fffaf6);
-}
-
-.hero-in{
-max-width:1180px;
-margin:auto;
-padding:75px 20px;
-display:grid;
-grid-template-columns:1fr 1fr;
-gap:45px;
-align-items:center;
+  max-width:1180px;
+  margin:25px auto;
+  padding:65px 25px;
+  border-radius:24px;
+  background:linear-gradient(135deg,var(--bege2),#fffaf6);
+  text-align:center;
 }
 
 .hero h1{
-font:normal clamp(44px,6vw,72px) Georgia,serif;
-color:var(--marrom);
-line-height:1.05;
+  font-family:Georgia,serif;
+  font-size:clamp(32px,6vw,58px);
+  color:var(--marrom);
 }
 
 .hero p{
-margin:20px 
+  font-size:18px;
+  margin:10px 0 22px;
+}
+
+.btn{
+  border:0;
+  background:var(--marrom);
+  color:white;
+  padding:13px 20px;
+  border-radius:10px;
+  cursor:pointer;
+  font-weight:bold;
+}
+
+.container{
+  max-width:1180px;
+  margin:auto;
+  padding:10px 20px 50px;
+}
+
+.titulo{
+  text-align:center;
+  margin:25px 0;
+}
+
+.titulo h2{
+  font-family:Georgia,serif;
+  font-size:32px;
+  color:var(--marrom);
+}
+
+.produtos{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:20px;
+}
+
+.card{
+  background:var(--branco);
+  border-radius:18px;
+  overflow:hidden;
+  border:1px solid #eadbd0;
+  box-shadow:0 5px 18px rgba(90,64,53,.08);
+}
+
+.foto{
+  height:180px;
+  background:var(--bege2);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  text-align:center;
+  padding:20px;
+  color:var(--rose);
+  font-family:Georgia,serif;
+  font-size:21px;
+}
+
+.info{
+  padding:18px;
+}
+
+.info h3{
+  color:var(--marrom);
+  font-size:19px;
+}
+
+.preco{
+  font-size:23px;
+  font-weight:bold;
+  color:var(--rose);
+  margin:8px 0 12px;
+}
+
+.tamanhos{
+  display:flex;
+  gap:7px;
+  margin:10px 0 16px;
+}
+
+.tamanho{
+  border:1px solid #d8c1b4;
+  border-radius:7px;
+  padding:5px 10px;
+  font-size:13px;
+  background:white;
+}
+
+.comprar{
+  width:100%;
+  border:0;
+  background:var(--rose);
+  color:white;
+  padding:12px;
+  border-radius:9px;
+  cursor:pointer;
+  font-weight:bold;
+  font-size:15px;
+}
+
+.beneficios{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:15px;
+  margin:25px 0 45px;
+}
+
+.beneficio{
+  background:white;
+  border-radius:15px;
+  padding:20px;
+  text-align:center;
+  border:1px solid #eadbd0;
+}
+
+.beneficio strong{
+  display:block;
+  color:var(--marrom);
+  margin-bottom:5px;
+}
+
+.sobre{
+  background:white;
+  border-radius:20px;
+  padding:35px 25px;
+  text-align:center;
+  margin-bottom:45px;
+  border:1px solid #eadbd0;
+}
+
+.sobre h2{
+  font-family:Georgia,serif;
+  color:var(--marrom);
+  margin-bottom:10px;
+}
+
+footer{
+  background:var(--marrom);
+  color:white;
+  text-align:center;
+  padding:28px 20px;
+}
+
+.menu-lateral{
+  position:fixed;
+  top:0;
+  left:-290px;
+  width:280px;
+  height:100vh;
+  background:#fffdfb;
+  z-index:1000;
+  padding:25px;
+  box-shadow:5px 0 20px rgba(0,0,0,.15);
+  transition:.25s;
+}
+
+.menu-lateral.aberto{
+  left:0;
+}
+
+.menu-lateral h2{
+  font-family:Georgia,serif;
+  color:var(--marrom);
+  margin-bottom:20px;
+}
+
+.menu-lateral button{
+  display:block;
+  width:100%;
+  text-align:left;
+  background:none;
+  border:0;
+  padding:12px 5px;
+  cursor:pointer;
+  color:var(--texto);
+  font-size:16px;
+  border-bottom:1px solid #eee;
+}
+
+.fechar{
+  float:right;
+  border:0;
+  background:none;
+  font-size:25px;
+  cursor:pointer;
+}
+
+.overlay{
+  display:none;
+  position:fixed;
+  inset:0;
+  background:rgba(0,0,0,.35);
+  z-index:900;
+}
+
+.overlay.aberto{
+  display:block;
+}
+
+@media(max-width:800px){
+  .produtos{
+    grid-template-columns:repeat(2,1fr);
+  }
+
+  .beneficios{
+    grid-template-columns:1fr;
+  }
+}
+
+@media(max-width:520px){
+  .nav{
+    padding:10px 14px;
+  }
+
+  .logo{
+    font-size:21px;
+  }
+
+  .hero{
+    margin:15px 12px;
+    padding:45px 18px;
+  }
+
+  .container{
+    padding-left:12px;
+    padding-right:12px;
+  }
+
+  .produtos{
+    grid-template-columns:1fr;
+  }
+
+  .foto{
+    height:160px;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<div class="overlay" id="overlay" onclick="fecharMenu()"></div>
+
+<aside class="menu-lateral" id="menu">
+
+<button class="fechar" onclick="fecharMenu()">×</button>
+
+<h2>Thayná Closet</h2>
+
+<button onclick="mostrarTodos()">Todas as peças</button>
+<button onclick="filtrar('conjunto')">Conjuntos</button>
+<button onclick="filtrar('body')">Bodies</button>
+<button onclick="filtrar('blusa')">Blusas</button>
+<button onclick="filtrar('short')">Shorts</button>
+<button onclick="filtrar('calca')">Calças</button>
+<button onclick="filtrar('vestido')">Vestidos</button>
+
+</aside>
+
+<header class="topo">
+
+<nav class="nav">
+
+<button class="menu-btn" onclick="abrirMenu()">☰</button>
+
+<div class="logo">
+Thayná <span>Closet</span>
+</div>
+
+<div></div>
+
+</nav>
+
+</header>
+
+<section class="hero">
+
+<h1>Thayná Closet</h1>
+
+<p>Moda que traduz seu estilo.</p>
+
+<button class="btn" onclick="irParaProdutos()">
+Ver coleção
+</button>
+
+</section>
+
+<main class="container" id="produtosArea">
+
+<div class="titulo">
+<h2>Nossa coleção</h2>
+<p>Escolha sua peça favorita 💕</p>
+</div>
+
+<section class="produtos" id="listaProdutos">
+   <article class="card" data-tipo="conjunto">
+<div class="foto">THAYNÁ CLOSET<br>Foto em breve</div>
+<div class="info">
+<h3>Conjunto calça e blusa alfaiataria</h3>
+<div class="preco">R$ 149,90</div>
+<div class="tamanhos">
+<span class="tamanho">P</span>
+<span class="tamanho">M</span>
+<span class="tamanho">G</span>
+</div>
+<button class="comprar" onclick="comprar('Conjunto calça e blusa alfaiataria','R$ 149,90')">
+Comprar pelo WhatsApp
+</button>
+</div>
+</article>
+
+<article class="card" data-tipo="short">
+<div class="foto">THAYNÁ CLOSET<br>Foto em breve</div>
+<div class="info">
+<h3>Short alfaiataria</h3>
+<div class="preco">R$ 69,90</div>
+<div class="tamanhos">
+<span class="tamanho">P</span><span class="tamanho">M</span><span class="tamanho">G</span>
+</div>
+<button class="comprar" onclick="comprar('Short alfaiataria','R$ 69,90')">
+Comprar pelo WhatsApp
+</button>
+</div>
+</article>
+
+<article class="card" data-tipo="body">
+<div class="foto">THAYNÁ CLOSET<br>Foto em breve</div>
+<div class="info">
+<h3>Body</h3>
+<div class="preco">R$ 69,90</div>
+<div class="tamanhos">
+<span class="tamanho">P</span><span class="tamanho">M</span><span class="tamanho">G</span>
+</div>
+<button class="comprar" onclick="comprar('Body','R$ 69,90')">
+Comprar pelo WhatsApp
+</button>
+</div>
+</article>
+
+<article class="card" data-tipo="blusa">
+<div class="foto">THAYNÁ CLOSET<br>Foto em breve</div>
+<div class="info">
+<h3>Blusinha</h3>
+<div class="preco">R$ 59,90</div>
+<div class="tamanhos">
+<span class="tamanho">P</span><span class="tamanho">M</span><span class="tamanho">G</span>
+</div>
+<button class="comprar" onclick="comprar('Blusinha','R$ 59,90')">
+Comprar pelo WhatsApp
+</button>
+</div>
+</article>
+
+<article class="card" data-tipo="short">
+<div class="foto">THAYNÁ CLOSET<br>Foto em breve</div>
+<div class="info">
+<h3>Short saia</h3>
+<div class="preco">R$ 99,90</div>
+<div class="tamanhos">
+<span class="tamanho">P</span><span class="tamanho">M</span><span class="tamanho">G</span>
+</div>
+<button class="comprar" onclick="comprar('Short saia','R$ 99,90')">
+Comprar pelo WhatsApp
+</button>
+</div>
+</article>
+
+<article class="card" data-tipo="calca">
+<div class="foto">THAYNÁ CLOSET<br>Foto em breve</div>
+<div class="info">
+<h3>Calças</h3>
+<div class="preco">R$ 99,90</div>
+<div class="tamanhos">
+<span class="tamanho">P</span><span class="tamanho">M</span><span class="tamanho">G</span>
+</div>
+<button class="comprar" onclick="comprar('Calças','R$ 99,90')">
+Comprar pelo WhatsApp
+</button>
+</div>
+</article>
+
+<article class="card" data-tipo="blusa">
+<div class="foto">THAYNÁ CLOSET<br>Foto em breve</div>
+<div class="info">
+<h3>Blusa Nanda</h3>
+<div class="preco">R$ 69,90</div>
+<div class="tamanhos">
+<span class="tamanho">P</span><span class="tamanho">M</span><span class="tamanho">G</span>
+</div>
+<button class="comprar" onclick="comprar('Blusa Nanda','R$ 69,90')">
+Comprar pelo WhatsApp
+</button>
+</div>
+</article>
+
+<article class="card" data-tipo="body">
+<div class="foto">THAYNÁ CLOSET<br>Foto em breve</div>
+<div class="info">
+<h3>Body Cecília</h3>
+<div class="preco">R$ 74,90</div>
+<div class="tamanhos">
+<span class="tamanho">P</span><span class="tamanho">M</span><span class="tamanho">G</span>
+</div>
+<button class="comprar" onclick="comprar('Body Cecília','R$ 74,90')">
+Comprar pelo WhatsApp
+</button>
+</div>
+</article>
+
+<article class="card" data-tipo="body">
+<div class="foto">THAYNÁ CLOSET<br>Foto em breve</div>
+<div class="info">
+<h3>Body Luísa</h3>
+<div class="preco">R$ 74,90</div>
+<div class="tamanhos">
+<span class="tamanho">P</span><span class="tamanho">M</span><span class="tamanho">G</span>
+</div>
+<button class="comprar" onclick="comprar('Body Luísa','R$ 74,90')">
+Comprar pelo WhatsApp
+</button>
+</div>
+</article>
+
+<article class="card" data-tipo="blusa">
+<div class="foto">THAYNÁ CLOSET<br>Foto em breve</div>
+<div class="info">
+<h3>Blusa risca</h3>
+<div class="preco">R$ 79,90</div>
+<div class="tamanhos">
+<span class="tamanho">P</span><span class="tamanho">M</span><span class="tamanho">G</span>
+</div>
+<button class="comprar" onclick="comprar('Blusa risca','R$ 79,90')">
+Comprar pelo WhatsApp
+</button>
+</div>
+</article>
+
+<article class="card" data-tipo="conjunto">
+<div class="foto">THAYNÁ CLOSET<br>Foto em breve</div>
+<div class="info">
+<h3>Conjunto Rebeca</h3>
+<div class="preco">R$ 119,90</div>
+<div class="tamanhos">
+<span class="tamanho">P</span><span class="tamanho">M</span><span class="tamanho">G</span>
+</div>
+<button class="comprar" onclick="comprar('Conjunto Rebeca','R$ 119,90')">
+Comprar pelo WhatsApp
+</button>
+</div>
+</article>
+
+<article class="card" data-tipo="conjunto">
+<div class="foto">THAYNÁ CLOSET<br>Foto em breve</div>
+<div class="info">
+<h3>Conjunto Charlotte</h3>
+<div class="preco">R$ 119,90</div>
+<div class="tamanhos">
+<span class="tamanho">P</span><span class="tamanho">M</span><span class="tamanho">G</span>
+</div>
+<button class="comprar" onclick="comprar('Conjunto Charlotte','R$ 119,90')">
+Comprar pelo WhatsApp
+</button>
+</div>
+</article>
+
+<article class="card" data-tipo="conjunto">
+<div class="foto">THAYNÁ CLOSET<br>Foto em breve</div>
+<div class="info">
+<h3>Conjunto Luna</h3>
+<div class="preco">R$ 119,90</div>
+<div class="tamanhos">
+<span class="tamanho">P</span><span class="tamanho">M</span><span class="tamanho">G</span>
+</div>
+<button class="comprar" onclick="comprar('Conjunto Luna','R$ 119,90')">
+Comprar pelo WhatsApp
+</button>
+</div>
+</article>
+
+<article class="card" data-tipo="vestido">
+<div class="foto">THAYNÁ CLOSET<br>Foto em breve</div>
+<div class="info">
+<h3>Vestidos</h3>
+<div class="preco">R$ 89,90</div>
+<div class="tamanhos">
+<span class="tamanho">P</span><span class="tamanho">M</span><span class="tamanho">G</span>
+</div>
+<button class="comprar" onclick="comprar('Vestidos','R$ 89,90')">
+Comprar pelo WhatsApp
+</button>
+</div>
+</article>
+
+<article class="card" data-tipo="short">
+<div class="foto">THAYNÁ CLOSET<br>Foto em breve</div>
+<div class="info">
+<h3>Short e saia jeans</h3>
+<div class="preco">R$ 89,90</div>
+<div class="tamanhos">
+<span class="tamanho">P</span><span class="tamanho">M</span><span class="tamanho">G</span>
+</div>
+<button class="comprar" onclick="comprar('Short e saia jeans','R$ 89,90')">
+Comprar pelo WhatsApp
+</button>
+</div>
+</article>
+
+<article class="card" data-tipo="calca">
+<div class="foto">THAYNÁ CLOSET<br>Foto em breve</div>
+<div class="info">
+<h3>Calça wide leg marrom</h3>
+<div class="preco">R$ 119,90</div>
+<div class="tamanhos">
+<span class="tamanho">P</span><span class="tamanho">M</span><span class="tamanho">G</span>
+</div>
+<button class="comprar" onclick="comprar('Calça wide leg marrom','R$ 119,90')">
+Comprar pelo WhatsApp
+</button>
+</div>
+</article>
+
+<article class="card" data-tipo="calca">
+<div class="foto">THAYNÁ CLOSET<br>Foto em breve</div>
+<div class="info">
+<h3>Calça wide snow oxé</h3>
+<div class="preco">R$ 119,90</div>
+<div class="tamanhos">
+<span class="tamanho">P</span><span class="tamanho">M</span><span class="tamanho">G</span>
+</div>
+<button class="comprar" onclick="comprar('Calça wide snow oxé','R$ 119,90')">
+Comprar pelo WhatsApp
+</button>
+</div>
+</article>
+
+<article class="card" data-tipo="calca">
+<div class="foto">THAYNÁ CLOSET<br>Foto em breve</div>
+<div class="info">
+<h3>Calça wide leg cargo</h3>
+<div class="preco">R$ 129,90</div>
+<div class="tamanhos">
+<span class="tamanho">P</span><span class="tamanho">M</span><span class="tamanho">G</span>
+</div>
+<button class="comprar" onclick="comprar('Calça wide leg cargo','R$ 129,90')">
+Comprar pelo WhatsApp
+</button>
+</div>
+</article>
+
+</section>
+
+<section class="beneficios">
+
+<div class="beneficio">
+<strong>💳 Pagamento</strong>
+Consulte as formas disponíveis pelo WhatsApp.
+</div>
+
+<div class="beneficio">
+<strong>📦 Atendimento</strong>
+Tire suas dúvidas antes de comprar.
+</div>
+
+<div class="beneficio">
+<strong>💕 Thayná Closet</strong>
+Estilo em cada detalhe.
+</div>
+
+</section>
+
+<section class="sobre">
+
+<h2>Sobre a Thayná Closet</h2>
+
+<p>
+Uma loja criada para trazer peças especiais e ajudar você a encontrar um estilo que combine com a sua personalidade.
+</p>
+
+</section>
+
+</main>
+
+<footer>
+
+<p><strong>Thayná Closet</strong></p>
+<p>Moda que traduz seu estilo.</p>
+<p>© 2026 Thayná Closet</p>
+
+</footer>
+
+<script>
+
+var WHATSAPP = "5587974001669";
+
+function abrirMenu(){
+
+document.getElementById("menu").classList.add("aberto");
+
+document.getElementById("overlay").classList.add("aberto");
+
+}
+
+function fecharMenu(){
+
+document.getElementById("menu").classList.remove("aberto");
+
+document.getElementById("overlay").classList.remove("aberto");
+
+}
+
+function irParaProdutos(){
+
+document.getElementById("produtosArea").scrollIntoView({
+behavior:"smooth"
+});
+
+}
+
+function comprar(produto,preco){
+
+var texto =
+"Olá! Vim pelo site da Thayná Closet.%0A%0A"+
+"Tenho interesse nesta peça:%0A"+
+encodeURIComponent(produto)+
+"%0AValor: "+
+encodeURIComponent(preco)+
+"%0ATamanho: gostaria de verificar a disponibilidade.";
+
+window.open(
+"https://wa.me/"+WHATSAPP+"?text="+texto,
+"_blank"
+);
+
+}
+
+function mostrarTodos(){
+
+var cards=document.querySelectorAll(".card");
+
+cards.forEach(function(card){
+
+card.style.display="block";
+
+});
+
+fecharMenu();
+
+irParaProdutos();
+
+}
+
+function filtrar(tipo){
+
+var cards=document.querySelectorAll(".card");
+
+cards.forEach(function(card){
+
+if(card.getAttribute("data-tipo")===tipo){
+
+card.style.display="block";
+
+}else{
+
+card.style.display="none";
+
+}
+
+});
+
+fecharMenu();
+
+irParaProdutos();
+
+}
+
+</script>
+
+</body>
+   </html>
